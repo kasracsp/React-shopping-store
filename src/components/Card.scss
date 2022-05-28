@@ -1,0 +1,114 @@
+.card_container{
+  width: 260px;
+  padding: 1rem;
+  border-radius: .3rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 5px 1px rgb(185, 181, 181);
+  transition: .4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.3rem;
+
+  &:hover{
+      box-shadow: 0 0 10px 5px rgb(139, 136, 136);
+  }
+
+  .card_image{
+    width: 228px;
+    height: 228px;
+  }
+
+  .card_title{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    white-space: nowrap;
+    color: rgb(32, 32, 32);
+    font-size: 1.3rem;
+    font-family: "Oswald",serif;
+    font-weight: bold;
+  }
+  .card_price{
+    background-color: red;
+    color: white;
+    padding:.2rem 1rem;
+    border-radius: 1rem;
+  }
+
+  .card_details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .card_info{
+      color: rgb(0, 102, 255);
+    }
+    
+    .card_btns{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      user-select: none;
+
+      .first_add{
+        background-color: green;
+        color: white;
+        padding:0.4rem .6rem;
+        border-radius: 2rem;
+        font-family:"Montserrat",
+        serif;
+        font-size: .7rem;
+        text-transform: uppercase;
+        transition: 0.2s;
+
+        &:hover{
+          background-color: rgb(19, 82, 19);
+        }
+        &:active{
+          transform: scale(1.05);
+        }
+      }
+
+      .card_quentity{
+        color: black;
+      }
+      .material-icons{
+        cursor: pointer;
+        transition: 0.2s;
+        
+          &:active{
+            transform: scale(1.05);
+          }
+      }
+
+      .remove{
+        color: red;
+        
+          &:hover{
+            color: rgb(156, 26, 26);
+          }
+      }
+
+      .add{
+        color: green;
+        
+        &:hover {
+          color: rgb(19, 82, 19);
+        }
+      }
+      
+      .count_positive{   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+
+      }
+    }
+  }
+}

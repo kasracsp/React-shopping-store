@@ -1,0 +1,155 @@
+.item_wrapper{
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+
+  .item_container{
+    width: 100%;
+    box-shadow: 0 0 2px 2px grey;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: start;
+    align-items: start;
+    gap: 2rem;
+    position: relative;
+
+    .item_thumb{
+      width: 100%;
+      aspect-ratio: 1;
+    }
+
+    .card_btns {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      user-select: none;
+      gap:1rem;
+    
+      .item_price {
+        background-color: red;
+        color: white;
+        padding: .3rem 1rem;
+        border-radius: 2rem;
+      }
+    
+      .first_add {
+        background-color: green;
+        color: white;
+        padding: 0.6rem .8rem;
+        border-radius: 2rem;
+        font-family: "Montserrat",serif;
+        font-size: .7rem;
+        text-transform: uppercase;
+        transition: 0.2s;
+    
+        &:hover {
+          background-color: rgb(19, 82, 19);
+        }
+    
+        &:active {
+          transform: scale(1.05);
+        }
+      }
+
+      .material-icons {
+        cursor: pointer;
+        transition: 0.2s;
+      
+        &:active {
+          transform: scale(1.05);
+        }
+      }
+      
+      .remove {
+        color: red;
+      
+        &:hover {
+          color: rgb(156, 26, 26);
+        }
+      }
+      
+      .add {
+        color: green;
+      
+        &:hover {
+          color: rgb(19, 82, 19);
+        }
+      }
+    }
+
+    .item_details{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 1rem; 
+
+      .item_title{
+        font-size: 1.5rem;
+        font-family:"Montserrat", serif;
+      }
+
+      .item_description{
+        color: rgb(26, 25, 25);
+
+        span{
+          color:black;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .item_category{
+      font-size: .9rem;
+      color: #0af;
+      text-transform: capitalize;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .item_rate {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      padding: .8rem 1rem;
+      border-radius: 50%;
+      background-color: #ffc21a;
+      z-index: 2;
+    }
+  }
+
+  .commentsWrapper{
+    width: 100%;
+    box-shadow: 0 0 2px 2px grey;
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+@media screen and (min-width:768px) {
+  .item_wrapper {
+    padding: 2rem 10rem;
+    .item_container {
+      grid-template-columns: repeat(2,1fr);
+
+      .item_details {
+        height: 100%;
+        justify-content: space-between;
+        align-items: space-between;
+      }
+    }
+  }
+}

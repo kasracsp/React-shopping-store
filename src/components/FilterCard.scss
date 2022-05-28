@@ -1,0 +1,36 @@
+.filterContainer{
+
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+
+  .priceFilters{
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .rate-stars{
+    background-color: white;
+
+    .material-icons {
+      color: gold;
+      cursor: pointer;
+    }
+  
+    .material-icons#grade {
+      color: grey;
+    }
+  }
+
+  button{
+    width: fit-content;
+    background-color: rgb(35, 102, 102);
+    padding:.5rem 1rem;
+    border-radius: .2rem;
+    color: white;
+    font-weight: bold;
+  }
+}
