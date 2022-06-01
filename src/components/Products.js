@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React,{useContext,useState} from 'react'
 import Card from './Card'
 import './Products.scss'
 import { DataContext } from '../context/DataContextProvider'
@@ -9,6 +9,8 @@ import { filterData } from './helper/filterData'
 const Products = () => {
   const state=useContext(DataContext)
   const {filterState}=useContext(FilteredContext)
+  
+  const [back,setBack]=useState(false)
 
   return (
     <div className='products_container'>
@@ -21,7 +23,8 @@ const Products = () => {
       :
       <div className='product-wrapper'>
         <div className='product-filter'>
-          <FilterCard />
+          <button onClick={()=>setBack(!back)}className='filterButton'>Filter</button>
+          <FilterCard isActive={back} setActive={()=>setBack(!back)}/>
         </div>
         <div className='product_container'>
           {filterData(state.data,filterState).map(item=><Card key={item.id} productData={item}/>)

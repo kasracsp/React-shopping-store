@@ -6,7 +6,7 @@
   box-shadow: 0 0 1px 1px grey;
   border-radius: 1rem;
   overflow: hidden;
-  gap: 2rem;
+  gap: .5rem;
   transition: 0.4s;
   padding: .5rem;
 
@@ -42,6 +42,7 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       -webkit-line-clamp: 2;
+      padding-right: .5rem;
 
       &:hover{
         color: black;
@@ -52,8 +53,10 @@
       width: 100%;
       padding-right: 1rem;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
+      gap: .5rem;
 
       .order_price{
         background-color: red;
@@ -108,6 +111,15 @@
               }
           
           }
+    }
+  }
+}
+@media screen and (min-width:470px){
+  .order_container {
+    .order_details{
+      .order_detail{
+        flex-direction: row;
+      }
     }
   }
 }

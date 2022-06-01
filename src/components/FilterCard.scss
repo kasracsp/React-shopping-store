@@ -1,15 +1,119 @@
 .filterContainer{
-
+  display: none;
   background-color: white;
-  display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap:.5rem;
+  padding-left: 1rem;
+  padding-top: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 9rem;
+  z-index: 11;
+
+  &.active{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+  }
 
   .priceFilters{
-    width: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    width: 100%;
+
+    .priceFilter{
+      position: relative;
+      width: 100%;
+      cursor: pointer;
+
+      input{
+        opacity: 0;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translate(0,-50%);
+
+        &:checked ~ label::before{
+          background-color: rgb(35, 102, 102);
+        }
+      }
+
+      label{
+        width: 100%;
+        position: relative;
+        padding-left: 1.2rem;
+        cursor: pointer;
+      
+        &::before{
+          content: '';
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          left: 0;
+          top: 50%;
+          transform: translate(0,-50%);
+          border: 1px solid rgb(35, 102, 102);
+          border-radius: .2rem;
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  .filter-intro{
+    color: grey;
+    margin-top: 1rem;
+    padding: 0 .5rem 0 0;
+  }
+  .filter-intro:not(:nth-child(1)){
+    border-bottom: 3px solid rgb(35, 102, 102);
+  }
+
+  .categoryFilter{
+    color: #000;
+
+    position: relative;
+      width: 100%;
+      cursor: pointer;
+    
+      input {
+        opacity: 0;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translate(0, -50%);
+    
+        &:checked~label::before {
+          background-color: rgb(35, 102, 102);
+        }
+      }
+    
+      label {
+        width: 100%;
+        position: relative;
+        padding-left: 1.2rem;
+        cursor: pointer;
+    
+        &::before {
+          content: '';
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          left: 0;
+          top: 50%;
+          transform: translate(0, -50%);
+          border: 1px solid rgb(35, 102, 102);
+          border-radius: .2rem;
+          background-color: white;
+        }
+      }
   }
 
   .rate-stars{
@@ -32,5 +136,11 @@
     border-radius: .2rem;
     color: white;
     font-weight: bold;
+  }
+}
+@media screen and (min-width:768px) {
+  .filterContainer {
+    display: flex;
+    top: 6rem;
   }
 }

@@ -6,15 +6,19 @@ import { categoryItems } from './helper/suggestion'
 import { isInFilter } from './helper/suggestion'
 import './FilterCard.scss'
 
-const FilterCard = () => {
+const FilterCard = ({isActive,setActive}) => {
   const state=useContext(DataContext)
   const {filterState,filterDispatch}=useContext(FilteredContext)
   const category=categoryItems(state)
 
   return (
-    <div className='filterContainer'>
+    <div className={`filterContainer ${isActive && 'active'}`}>
+      {
+        isActive && <button onClick={setActive}>back to product</button>
+      }
       <div className='priceFilters'>
         <div className='priceFilter'>
+          <p className='filter-intro'>Sort</p>
           <input type="radio" name="sort" id="Ascending" onChange={()=>filterDispatch({type:'SORT_BY_PRICE',payload:'Ascending'})} checked={filterState.sort==='Ascending'?true:false}/>
           <label htmlFor="Ascending">Ascending</label>
         </div>
@@ -28,6 +32,7 @@ const FilterCard = () => {
         </div>
       </div>
 
+      <p className='filter-intro'>Category</p>
       {category.map((item,index)=>
       <div key={index} className='categoryFilter'>
           <input type="checkbox" id={item} 
@@ -35,6 +40,7 @@ const FilterCard = () => {
           <label htmlFor={item}>{item}</label>
         </div>
       )}
+      <p className='filter-intro'>Rate</p>
       <div className='rate-stars'>
         {[1,2,3,4,5].map((item,index)=>
           <span key={index} className='material-icons' id={filterState.ratingSort>=item?'':'grade'}onClick={()=>filterDispatch({type:'SORT_BY_RATING',payload:item})}>star</span>
